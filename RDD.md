@@ -32,3 +32,4 @@ Two types, the transformation and action
 - Two type of transformation: with narrow dependencies and with wide dependencies
   - **narrow** - It can depend on the parent (as map), or a unique subset of the parent partitions that is known at design time (coalesce) -> no need any information from other partitions 
   - **wide** - It includes `sort`,`reduceByKey`, `join`, and anything that calls the repartitions function. -> it will cause an expensive shuffle. If Spark already knows that data are partitioned in a certain way, operations with wide dep. do not cause shuffle.
+- Not all transformations are 100% lazy evaluated, i.e. `sortByKey` needs to evaluate RDD

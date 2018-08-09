@@ -11,12 +11,11 @@ It is more than computing model but an ecosystem of a variety of packages, libra
 * Spark is a framework for managing and coordinating the resources of a cluster for the goal to process a huge amount of data.
 * Spark has two API - The [Unstructured]() and [Structured]()
 * Spark has several core abstractions: [Datasets](), [DataFrames](), [SQL Tables](), and [Resilient Distributed Datasets]() (RDDs). These abstractions all represent distributed collections of data however they have different interfaces for working with that data.
-
-* The Unstructured API is lower level API, includes RDD, [Accumulators]() and [Broadcast variables](). It is mainly for manipulation of raw Java objects.
-* The Structured API includes DataFrames, Datasets, Spark SQL. Is the interface that most users should use. It does some optimization work with structured data. It organizes data into the table.
+  * The Unstructured API is lower level API, includes RDD, [Accumulators]() and [Broadcast variables](). It is mainly for manipulation of raw Java objects.
+  * The Structured API includes DataFrames, Datasets, Spark SQL. Is the interface that most users should use. It does some optimization work with structured data. It organizes data into the table.
 * Spark organizes computation into two categories - [transformations]() and [actions]().
 * Core Spark data structures are immutable.
-* Lazy evaluation - Spark waits until the very last moment to execute your transformations.
+* Lazy evaluation - Spark waits until the very last moment to execute your transformations. It allows combine operation that doesn't require communications with driver.
 * Spark console - `./bin/spark-shell`
 
 ### Spark components

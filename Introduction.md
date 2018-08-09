@@ -16,6 +16,8 @@ It is more than computing model but an ecosystem of a variety of packages, libra
 * Spark organizes computation into two categories - [transformations]() and [actions]().
 * Core Spark data structures are immutable.
 * Lazy evaluation - Spark waits until the very last moment to execute your transformations. It allows combine operation that doesn't require communications with driver.
+* Fault-tolerance - Spark will not fail, lose data, or return inaccurate results in the event of a host machine or network failure.
+* Memory management - There are three options for memory management: in-memory deserialized, in-memory serialized, and on the disk.
 * Spark console - `./bin/spark-shell`
 
 ### Spark components

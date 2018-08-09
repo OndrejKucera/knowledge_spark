@@ -2,8 +2,9 @@ RDD
 ======================
 
 * It represents a large dataset.
-* It is immutable distributed data collection of objects which are stored in the executors (slave nodes). Object that comprise RDD are called partitions
+* It is immutable distributed data collection (statically typed) of objects which are stored in the executors (slave nodes). Object that comprise RDD are called partitions
 * All RDDs are evaluated lazily
+* It has a number of predefined transformations, (`map`, `join`, `reduce`, ...) that are similar as in Scala, to manipulate the distributed datasets.
 * Spark can keep loaded RDD in the memory on the executor nodes through the life of Spark application (faster access in repeat computation)
 * There are three ways how is possible to create RDD
   * by transforming an existing RDD
@@ -21,6 +22,10 @@ Two types, the transformation and action
 - It triggers (forced evaluation) the scheduler, which builds a direct acyclic graph (DAG)
 - Some of the action doesn't scale well and can cause memory errors in the driver. It is better to use action like `take`, `count`, `reduce` which brings back a fixed amount of data rather than `collect` and `sample`
 - The `foreach` can be used to force evaluation of RDD but is also used to write unsupported format like web endpoints.
+- There are three types of actions:
+ - for viewing data in the console
+ - to collect data to native objects
+ - for writing data to output source
 
 #### Transformation
 - It always returns another RDD

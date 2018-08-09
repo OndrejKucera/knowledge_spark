@@ -10,5 +10,7 @@ Note:
 6)
 7) ...
 
+The main source for these notes is [Spark: The Definitive Guide](http://shop.oreilly.com/product/0636920034957.do) and [High Performace Spark]()
+
 wiki page: https://github.com/OndrejKucera/knowledge_spark/wiki
 

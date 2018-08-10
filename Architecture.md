@@ -2,8 +2,8 @@ Architecture
 =============
 
 ### Basic architecture
-* Cluster - a group of machines
-* Spark application - consists of driver process and executors processes.
+* **Cluster** - a group of machines
+* **Spark application** - consists of driver process and executors processes.
 * **Driver process** - runs on Driver node and maintains information about Spark app, responses user's program, analyzing, distributing and scheduling work for executors. It is an essential part of Spark (the heart of a spark app).
 * **Executor** - is responsible for executing code and reporting the state back to the driver.
 * **Cluster Manager** - controls physical machines and allocate resources to Spark application. Spark supports three cluster managers: Standalone Cluster Manager, [Apache Mesos](), and [Hadoop YARN](). Thanks to that, there can be multiple Spark applications running at same time. If you use the Standalone Cluster Manager then installing Spark on each node of the cluster is required.

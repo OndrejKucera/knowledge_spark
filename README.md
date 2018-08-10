@@ -6,6 +6,7 @@ Note:
 2) [Architecture](https://github.com/OndrejKucera/knowledge_spark/blob/master/Architecture.md)
 3) [Execution](https://github.com/OndrejKucera/knowledge_spark/blob/master/Execution.md)
 4) [RDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md)
+  - [PairRDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#pair-rdds)
 5) [DataFrame & Dataset]()
 6)
 7) ...

@@ -19,8 +19,8 @@ Architecture
 - There are many options how is possible to persist intermediate results.
 - The `cache()` method uses the default storage level. In memory as regular Java objects
 - The `persist()` is for customazing the level of storage. There are 5 possibilities:
-  - memory as regular Java objects
-  - on disk as regular Java objects
-  - memory as serialized Java objects
-  - on disk as serialized Java objects
-  - both, in memory and then on the disk
+  - memory as regular Java objects `MEMEORY_ONLY`
+  - on disk as regular Java objects `MEMORY_AND_DISK`
+  - memory as serialized Java objects `MEMORY_ONLY_SER`
+  - on disk as serialized Java objects `MEMORY_AND_DISK_SER`
+  - both, in memory and then on the disk `DISK_ONLY` (spill over to disk to avoid re-computation)

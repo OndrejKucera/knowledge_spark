@@ -8,7 +8,7 @@ RDD
 * Spark can keep loaded RDD in the memory on the executor nodes through the life of Spark application (faster access in repeat computation)
 * There are three ways how is possible to create RDD
   * by transforming an existing RDD
-  * from SparkContext by makeRDD or parallelize methods. Or reading from a stable storage
+  * from SparkContext by `makeRDD` or `parallelize` methods. Or reading from a stable storage
   * converting DataFrame or Dataset (created from SparkSession) 
 * Some operations have a different signature in Java than in Scala
 * The `toDebugString` for find out the type of RDD

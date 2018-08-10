@@ -37,5 +37,6 @@ Two types, the transformation and action
 ### Pair RDDs
 - Pair RDD has additional methods for working with data associated with key
 - the type RDD[(K< V)] is treated specially by Spark
-- `groupBykey`, `reduceByKey`, `join`
 - How to create PairRDD -> usually as `map` operation on the RDD
+- Transformation: `groupBykey`, `reduceByKey`, `mapValues`, `keys`, `join`, `leftOuterJoin`, `rightOuterJoin`
+- Action: `countByKey`

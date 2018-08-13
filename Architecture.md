@@ -14,15 +14,39 @@ Architecture
 * **Partition** - It is a collection of rows that sit on one physical machine in the cluster. Spark will operate on each partition in parallel unless an operation calls for a shuffle, where multiple partitions need to share data.
   * The partitioning scheme defines how that is broken up, this can be set to be based on values in a certain column or non-deterministically.
 
-### Spark Execution:
+### Spark Execution
 - Write DataFrame/Dataset/SQL Code
 - If the code is valid, Spark converts it to a 'Logical Plan' (set of abstract transformations that do not refer to executors or drivers.)
 - Spark transforms this 'Logical Plan' into a 'Physical Plan'
 - Spark then executes this 'Physical Plan' on the cluster
 
-#### Logical Planning:
+#### Logical Planning
 - User code into an unresolved logical plan (code may be valid, the tables or columns that it refers to may or may not exist)
 - Analyzer needs catalog (a repository of all table and DataFrame information) in order to resolve columns and tables of an unresolved logical plan.
 - The resolved logical plan goes through optimizer and it creates an optimized logical plan.
-#### Physical Planning:
+#### Physical Planning
 - specifies how the logical plan will execute on the cluster by generating different physical execution strategies and comparing them through a cost model. It compiles DataFrames, ... into RDD transformations.
+
+==============
+
+#### Run the start
+- Spark application begins when a `SparkContext` is started. Then the driver and executors (on its own JVM) are started on the workers node. One node can have more executors.
+
+#### Scheduler
+- Spark schedules jobs on a fifo basis, by default.
+- With each action the Scheduler builds execution graph and launch the spark job.
+- **Spark Job**
+  - Each spark job corresponds to one action
+  - The highest element of execution hierarchy
+- **Stages**
+  - Each job has **stages** (wide transformation) that are steps of transformation data. Each stage consists of the collection of **tasks** (combine narrow transformation).
+- **Tasks**
+  - Task represent parallel computing and is performer on executor.
+  
+#### DAG
+- builds a graph of stages for each job, 
+ 
+#### Resource Allocation
+- static allocation - the finite maximum resource is hardly set
+- dynamic allocation - executors are added and removed from a Spark app as needed
+

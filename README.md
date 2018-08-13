@@ -5,10 +5,11 @@ Note: The notes are not exhausted knowledge about Apache Spark.
 
 1) [Introduction](https://github.com/OndrejKucera/knowledge_spark/blob/master/Introduction.md)
 2) [Architecture](https://github.com/OndrejKucera/knowledge_spark/blob/master/Architecture.md)
-3) [Execution](https://github.com/OndrejKucera/knowledge_spark/blob/master/Execution.md)
-4) [RDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md)
+    - Spark Execution
+3) [RDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md)
     - [Action](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#action)
     - [Transformation](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#transformation)
+    - Persisting data
     - [PairRDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#pair-rdds)
 5) [DataFrame & Dataset]()
 6) ???

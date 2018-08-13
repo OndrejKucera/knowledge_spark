@@ -2,7 +2,7 @@ Architecture
 =============
 
 ### Basic architecture
-* **Cluster** - a group of machines
+* **Cluster** - a group of machines. One spark cluster can run several Spark applications.
 * **Spark application** - consists of driver process and executors processes.
 * **Driver process** - runs on Driver node and maintains information about Spark app, responses user's program, analyzing, distributing and scheduling work for executors. It is an essential part of Spark (the heart of a spark app).
 * **Executor** - is responsible for executing code and reporting the state back to the driver.

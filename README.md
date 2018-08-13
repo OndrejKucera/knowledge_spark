@@ -6,6 +6,8 @@ Note: The notes are not exhausted knowledge about Apache Spark.
 1) [Introduction](https://github.com/OndrejKucera/knowledge_spark/blob/master/Introduction.md)
 2) [Architecture](https://github.com/OndrejKucera/knowledge_spark/blob/master/Architecture.md)
     - Spark Execution
+    - Scheduling
+    - Shuffling
 3) [RDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md)
     - [Action](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#action)
     - [Transformation](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#transformation)

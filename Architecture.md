@@ -14,13 +14,17 @@ Architecture
 * **Partition** - It is a collection of rows that sit on one physical machine in the cluster. Spark will operate on each partition in parallel unless an operation calls for a shuffle, where multiple partitions need to share data.
   * The partitioning scheme defines how that is broken up, this can be set to be based on values in a certain column or non-deterministically.
 
-### Persisting data
-- It shoudl be used especcialy for iterative algorithms. There are used the same data sets. (i.e. [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression))
-- There are many options how is possible to persist intermediate results.
-- The `cache()` method uses the default storage level. In memory as regular Java objects
-- The `persist()` is for customazing the level of storage. There are 5 possibilities:
-  - memory as regular Java objects `MEMEORY_ONLY`
-  - on disk as regular Java objects `MEMORY_AND_DISK`
-  - memory as serialized Java objects `MEMORY_ONLY_SER`
-  - on disk as serialized Java objects `MEMORY_AND_DISK_SER`
-  - both, in memory and then on the disk `DISK_ONLY` (spill over to disk to avoid re-computation)
+### Execution
+
+### Spark Execution:
+- Write DataFrame/Dataset/SQL Code
+- If the code is valid, Spark converts it to a 'Logical Plan' (set of abstract transformations that do not refer to executors or drivers.)
+- Spark transforms this 'Logical Plan' into a 'Physical Plan'
+- Spark then executes this 'Physical Plan' on the cluster
+
+#### Logical Planning:
+- User code into an unresolved logical plan (code may be valid, the tables or columns that it refers to may or may not exist)
+- Analyzer needs catalog (a repository of all table and DataFrame information) in order to resolve columns and tables of an unresolved logical plan.
+- The resolved logical plan goes through optimizer and it creates an optimized logical plan.
+#### Physical Planning:
+- specifies how the logical plan will execute on the cluster by generating different physical execution strategies and comparing them through a cost model. It compiles DataFrames, ... into RDD transformations.

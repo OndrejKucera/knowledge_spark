@@ -34,6 +34,17 @@ Two types, the transformation and action
   - **wide** - It includes `sort`,`reduceByKey`, `join`, and anything that calls the repartitions function. -> it will cause an expensive shuffle. If Spark already knows that data are partitioned in a certain way, operations with wide dep. do not cause shuffle.
 - Not all transformations are 100% lazy evaluated, i.e. `sortByKey` needs to evaluate RDD
 
+### Persisting data
+- It shoudl be used especcialy for iterative algorithms. There are used the same data sets. (i.e. [Logistic Regression](https://en.wikipedia.org/wiki/Logistic_regression))
+- There are many options how is possible to persist intermediate results.
+- The `cache()` method uses the default storage level. In memory as regular Java objects
+- The `persist()` is for customazing the level of storage. There are 5 possibilities:
+  - memory as regular Java objects `MEMEORY_ONLY`
+  - on disk as regular Java objects `MEMORY_AND_DISK`
+  - memory as serialized Java objects `MEMORY_ONLY_SER`
+  - on disk as serialized Java objects `MEMORY_AND_DISK_SER`
+  - both, in memory and then on the disk `DISK_ONLY` (spill over to disk to avoid re-computation)
+
 ### Pair RDDs
 - Pair RDD has additional methods for working with data associated with key
 - the type RDD[(K< V)] is treated specially by Spark

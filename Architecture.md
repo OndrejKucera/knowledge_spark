@@ -14,8 +14,6 @@ Architecture
 * **Partition** - It is a collection of rows that sit on one physical machine in the cluster. Spark will operate on each partition in parallel unless an operation calls for a shuffle, where multiple partitions need to share data.
   * The partitioning scheme defines how that is broken up, this can be set to be based on values in a certain column or non-deterministically.
 
-### Execution
-
 ### Spark Execution:
 - Write DataFrame/Dataset/SQL Code
 - If the code is valid, Spark converts it to a 'Logical Plan' (set of abstract transformations that do not refer to executors or drivers.)

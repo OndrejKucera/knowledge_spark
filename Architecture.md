@@ -55,6 +55,7 @@ Architecture
 
 ### Partitioning
 - goal ->  evenly spread our keys
+- With good partitioning, you can avoid lots of data transfering
 - Number of partition is configurable. By default, it equals a number of cores on all executors nodes.
 - Two types of partitioning:
   - **hash part.** - `p = k.hashCode() % numPartitions`
@@ -62,5 +63,6 @@ Architecture
 - Two ways to create RDD with specific partitioning:
   - Mathod `parititonBy` on RDD with specific partitioner (`RangePartitioner`)
   - Using transformation that returns RDD with specific transformation
+
 
 

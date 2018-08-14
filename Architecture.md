@@ -50,3 +50,17 @@ Architecture
 - static allocation - the finite maximum resource is hardly set
 - dynamic allocation - executors are added and removed from a Spark app as needed
 
+### Shuffling
+- moving data from one node to antoher (i.e. use `reduceByKey` not `groupByKey`), which cause high latency
+
+### Partitioning
+- goal ->  evenly spread our keys
+- Number of partition is configurable. By default, it equals a number of cores on all executors nodes.
+- Two types of partitioning:
+  - **hash part.** - `p = k.hashCode() % numPartitions`
+  - **range part.** - ordering for keys, sorted ranges keys
+- Two ways to create RDD with specific partitioning:
+  - Mathod `parititonBy` on RDD with specific partitioner (`RangePartitioner`)
+  - Using transformation that returns RDD with specific transformation
+
+

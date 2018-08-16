@@ -1,7 +1,7 @@
-Spark SQL - Structured
+Spark SQL
 ====================
 
-Spark SQL is module for structured data processing. It contents the `DataFrames`, `Datasets`, and in SQL-like operations. Most operations apply both batch and stream computation.
+Spark SQL is module for **structured data processing**. It contents the `DataFrames`, `Datasets`, and in SQL-like operations. Most operations apply both batch and stream computation.
 
 DataFrames and Datasets represent Distributed collections (with rows and columns -> type information), with additional schema information not found in RDD.
 

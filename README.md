@@ -13,7 +13,9 @@ Note: The notes are not exhausted knowledge about Apache Spark.
     - [Transformation](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#transformation)
     - Persisting data
     - [PairRDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#pair-rdds)
-5) [DataFrame & Dataset]()
+5) [Spark SQL - Structured API](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md)
+    - Schema
+    - Structured Spark Types
 6) ???
 7) ...
 

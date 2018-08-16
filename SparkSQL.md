@@ -39,21 +39,28 @@ Three main goals:
   * Row objects are the objects that column expressions operate on to produce some usable value.
   * We can get Row by call method first `df.first()`
 - **Spark Value Types**
-  * Basic types are mapped into the spark types.
+  * Basic Scala types are mapped into the Spark SQL types. i.e. `Int` -> `IntegerType`, `Array[T]` -> `ArrayType(elementType, containsNull)`, `case class` -> `StructType(List(StructFileds))`
 - **Encoders**
   * Using Spark from Scala and Java allows you to define your own JVM types to use in place of Rows that consist of the above data types.
 
 ### DataFrames
-- DataFrame is Untyped (goes across languages). Scala compiler doesn't check the types in the schema.
-- The 'untyped API' does have types but it only operates on Spark types at runtime.
-- DataFrames are Dataset of a special Row object
-- DataFrame is SQL's core abstraction -> RDD with Schema which is required -> conceptional as table in SQL 
+- DataFrame is Untyped (goes across languages). Scala compiler doesn't (and can't) check the types in the schema in DataFrames
+- DataFrames are Dataset of a special Row object, which is not parametrized by a type
+- The 'untyped API' does have types. It only operates on Spark types at runtime.
+- DataFrame is SQL's core abstraction -> RDD with Schema which is required -> conceptional as table in SQL
 - How to create DataFrame:
   - from existing RDD `rdd.toDF("id", "name")`, `peopleRDD.toDF` or `spark.createDataFrame(rowRDD, schema)`
   - reading data source from file (json, ...) `spark.read.json("path")`
 - If you want to use sql query you have to register the table `spark.sql("... some query ...")`
+- **Operations**
+  - Transformation returns DataFrame and are lazy
+  - `select`, `agg`, `where`, `limit`, `filter`, `orderBy`, `groupBy`, `join`, `union`
+  - `show` -> pretty prints of DataFrame
+  - `printSchema` -> print schema of DataFrame
+  - i.e. `df.filter($"age" > 18)`
+  - Grouping and aggregating
+    - groupBy returns `RelationalGroupedDataset`. It has several aggrgation functions `sum`, `max`, `min`, `count` ...
 
-### Dataset
 
 
 =??===

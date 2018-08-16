@@ -9,6 +9,8 @@ Three main goals:
   - support relation processing
   - high performance -> Backend components: Catalyst (optimizer), Tungsten (off-heap serializer)
   - support data sources -> semi-structural data and external databases
+  
+Note: There is no performance difference between writing SQL queries or writing DataFrame code. `Method Dataset.explain()` prints the physical plan to the console for debugging purposes.
 
 ### Schema:
 * One core concept that differentiates the Structured APIs from the lower level APIs.
@@ -17,7 +19,7 @@ Three main goals:
 * A schema is a `StructType` made up of a number of fields, `StructFields` that have a name, type, and a boolean flag.
 * With Schema, it is possible to provide more efficient storage layer (Tungsten) and also more optimalization (Catalyst)
 
-### Overview of Structured Spark Types:
+### Structured Spark Types:
 - **DataFrames** 
   * Untyped API, goes across languages. The 'untyped API' does have types but it only operates on Spark types at runtime.
 - **Datasets**
@@ -61,8 +63,3 @@ Three main goals:
   - Grouping and aggregating
     - groupBy returns `RelationalGroupedDataset`. It has several aggrgation functions `sum`, `max`, `min`, `count` ...
 
-
-
-=??===
-* There is no performance difference between writing SQL queries or writing DataFrame code.
-Note: Method Dataset.explain() - Prints the physical plan to the console for debugging purposes.

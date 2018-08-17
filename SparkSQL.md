@@ -46,8 +46,8 @@ Note: There is no performance difference between writing SQL queries or writing 
   * Using Spark from Scala and Java allows you to define your own JVM types to use in place of Rows that consist of the above data types.
 
 ### DataFrames
-- DataFrame is Untyped (goes across languages). Scala compiler doesn't (and can't) check the types in the schema in DataFrames
-- DataFrames are Dataset of a special Row object, which is not parametrized by a type
+- DataFrame is Untyped (goes across languages). Scala compiler doesn't (and can't) check the types in the schema in DataFrames -> Limitation
+- DataFrames are Dataset of a special Row object, which is not parametrized by a type `type DataFrame = Dataset[Row]`
 - The 'untyped API' does have types. It only operates on Spark types at runtime.
 - DataFrame is SQL's core abstraction -> RDD with Schema which is required -> conceptional as table in SQL
 - How to create DataFrame:
@@ -57,12 +57,44 @@ Note: There is no performance difference between writing SQL queries or writing 
 - **Operations**
   - Transformation returns DataFrame and are lazy
   - `select`, `agg`, `where`, `limit`, `filter`, `orderBy`, `groupBy`, `join`, `union`
-  - `show` -> pretty prints of DataFrame
   - `printSchema` -> print schema of DataFrame
   - i.e. `df.filter($"age" > 18)`
-  - **Grouping and Aggregating**
+  - **Grouping & Aggregating**
     - groupBy returns `RelationalGroupedDataset`. It has several aggrgation functions `sum`, `max`, `min`, `count` ...
   - **Dropping/Repleacing columns** 
     - `drop` - drop rows that contains null or Nan in any column or `drop(Array("id", "age"))` in specific columns
-    - `fill(0)` - replace all accurrences of null or Nan with specific value   
+    - `fill(0)` - replace all accurrences of null or Nan with specific value
+  - **Joins**
+    - `df1.join(df2, $"df1.id" === $"df2.id")`
+    - There many types of join -> inner, outer, left_outer, right_outer, leftsemi -> `df1.join(df2, $"df1.id" === $"df2.id", "right_outer")`
+- **Actions**
+  - `collect`, `count`, `show` (pretty prints of DataFrame), `first`, `head`, `take`
 
+### Dataset
+  - Typed distributed collection of data
+  - It requires structered/semi-structed data
+  - unifies DataFrame and RDD API -> type information + optimalization
+  - It is possible to use relation DataFrame operations on the `Dataset` and also higher-order functions like map, flatMap
+  - creatign Dataset:
+    - call `toDS` on Dataframe, RDD, or Scala collections (implicits)
+  - It has `TypedColumn` -> `$"price".as[Double]`
+  - It has two types of transformation: 
+    - typed
+      - `map`, `flatMap`, `filter`, `distinct`, `coalesce`, `repartition`
+      - `groupByKey` returns `KeyValueGroupDataset[K,T]` aggregation operation `agg` can be called which return Dataset. Or `reduceGroups`, `mapGroups`, `flatMapGroups`
+    - untyped
+  - Actions: same as in RDDs and DataFrames
+
+### Deferences between APIs
+ - **Dataset**
+   - semi-structed/structed data
+   - typesafety
+   - functional API
+   - good performace (but not teh best)
+ - **DataFrame**
+   - semi-structed/structed data
+   - the best possible performace 
+ - **RDD**
+   - you have unstructured data
+   - you want fine-tuned and manage low-level data
+   - you have complex data that can not be serialized with Encoder

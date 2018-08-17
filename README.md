@@ -16,7 +16,10 @@ Note: The notes are not exhausted knowledge about Apache Spark.
 5) [Spark SQL - Structured API](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md)
     - Schema
     - Structured Spark Types
-6) ???
-7) ...
+    - DataFrames
+    - Dataset
+6) Spark Streaming
+
+... still in progress!
 
 The main source for these notes is [Spark: The Definitive Guide](http://shop.oreilly.com/product/0636920034957.do) and [High Performace Spark](http://shop.oreilly.com/product/0636920046967.do) and Coursera course [Big Data Analysis with Scala and Spark](https://www.coursera.org/learn/scala-spark-big-data/home/welcome)

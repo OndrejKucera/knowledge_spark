@@ -60,6 +60,9 @@ Note: There is no performance difference between writing SQL queries or writing 
   - `show` -> pretty prints of DataFrame
   - `printSchema` -> print schema of DataFrame
   - i.e. `df.filter($"age" > 18)`
-  - Grouping and aggregating
+  - **Grouping and Aggregating**
     - groupBy returns `RelationalGroupedDataset`. It has several aggrgation functions `sum`, `max`, `min`, `count` ...
+  - **Dropping/Repleacing columns** 
+    - `drop` - drop rows that contains null or Nan in any column or `drop(Array("id", "age"))` in specific columns
+    - `fill(0)` - replace all accurrences of null or Nan with specific value   
 

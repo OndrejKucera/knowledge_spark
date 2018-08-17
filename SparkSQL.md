@@ -90,7 +90,7 @@ Note: There is no performance difference between writing SQL queries or writing 
    - semi-structed/structed data
    - typesafety
    - functional API
-   - good performace (but not teh best)
+   - good performace (but not the best -> you can miss some optimalization i.e. when you use functional style)
  - **DataFrame**
    - semi-structed/structed data
    - the best possible performace 

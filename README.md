@@ -11,13 +11,13 @@ Note: The notes are not exhausted knowledge about Apache Spark.
 3) [RDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md)
     - [Action](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#action)
     - [Transformation](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#transformation)
-    - Persisting data
+    - [Persisting data](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#persisting-data)
     - [PairRDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#pair-rdds)
 5) [Spark SQL - Structured API](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md)
-    - Schema
-    - Structured Spark Types
-    - DataFrames
-    - Dataset
+    - [Schema](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#schema)
+    - [DataFrames](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#dataframes)
+    - [Dataset](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#dataset)
+    - [Deferences between APIs](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#deferences-between-apis)
 6) Spark Streaming
 
 ... still in progress!

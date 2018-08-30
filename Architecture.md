@@ -1,5 +1,6 @@
 Architecture
 =============
+master/worker architecture
 
 ### Basic architecture
 * **Cluster** - a group of machines. One spark cluster can run several Spark applications.

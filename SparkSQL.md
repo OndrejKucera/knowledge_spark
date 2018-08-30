@@ -72,7 +72,7 @@ Note: There is no performance difference between writing SQL queries or writing 
 
 ### Dataset
   - Typed distributed collection of data
-  - It requires structered/semi-structed data
+  - It requires structured/semi-structed data
   - unifies DataFrame and RDD API -> type information + optimalization
   - It is possible to use relation DataFrame operations on the `Dataset` and also higher-order functions like map, flatMap
   - creatign Dataset:

@@ -23,9 +23,9 @@ Two types, the transformation and action
 - Some of the action doesn't scale well and can cause memory errors in the driver. It is better to use action like `take`, `count`, `reduce` which brings back a fixed amount of data rather than `collect` and `sample`
 - The `foreach` can be used to force evaluation of RDD but is also used to write unsupported format like web endpoints.
 - There are three types of actions:
- - for viewing data in the console
- - to collect data to native objects
- - for writing data to output source
+  - for viewing data in the console
+  - to collect data to native objects
+  - for writing data to output source
 
 #### Transformation
 - It always returns another RDD

@@ -2,7 +2,8 @@ RDD
 ======================
 
 * It represents a large dataset.
-* It is immutable distributed data collection (statically typed) of objects which are stored in the executors (slave nodes). Object that comprise RDD are called partitions
+* It is immutable distributed data collection of objects which are stored in the executors (slave nodes). Object that comprise RDD are called partitions
+* It is statically typed -> compile-time type-safe
 * All RDDs are evaluated lazily
 * It has a number of predefined transformations, (`map`, `join`, `reduce`, ...) that are similar as in Scala, to manipulate the distributed datasets.
 * Spark can keep loaded RDD in the memory on the executor nodes through the life of Spark application (faster access in repeat computation)

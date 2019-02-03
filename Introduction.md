@@ -9,7 +9,7 @@ It is more than computing model but an ecosystem of a variety of packages, libra
 * The first stable version of [Apache Spark](https://spark.apache.org/) was released in May 2014
 * Spark is primarily written in Scala and can be used also with Java, Python, R (and SQL).
 * Spark is a framework for managing and coordinating the resources of a cluster for the goal to process a huge amount of data.
-* Spark has two API - The [Unstructured]() and [Structured]()
+* Spark has two API - The [Unstructured]() and [Structured](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#structured-spark-types)
 * Spark has several core abstractions: [Datasets](), [DataFrames](), [SQL Tables](), and [Resilient Distributed Datasets](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md) (RDDs). These abstractions all represent distributed collections of data however they have different interfaces for working with that data.
   * The Unstructured API is lower level API, includes RDD, [Accumulators]() and [Broadcast variables](). It is mainly for manipulation of raw Java objects.
   * The Structured API includes DataFrames, Datasets, Spark SQL. Is the interface that most users should use. It does some optimization work with structured data. It organizes data into the table.

@@ -83,6 +83,7 @@ Note: There is no performance difference between writing SQL queries or writing 
       - `map`, `flatMap`, `filter`, `distinct`, `coalesce`, `repartition`
       - `groupByKey` returns `KeyValueGroupDataset[K,T]` aggregation operation `agg` can be called which return Dataset. Or `reduceGroups`, `mapGroups`, `flatMapGroups`
     - untyped
+  - There are also transformation for working with multiple datasets - `intersect`, `union`, `substract`
   - Actions: same as in RDDs and DataFrames
 
 ### Deferences between APIs
@@ -98,3 +99,15 @@ Note: There is no performance difference between writing SQL queries or writing 
    - you have unstructured data
    - you want fine-tuned and manage low-level data
    - you have complex data that can not be serialized with Encoder
+   
+### User-Defined Functions (UDF or UDAF)
+  - way to extend DataFrame and SQL with custom code while you keep the Catalyst optimizer
+  - It is usefull for Dataset because otherwise you would need to transform data to RDD which is expensive.
+  - **UDF** - Writing UDF for Spark SQL is simple. It is like regular function which is registred by using `sqlContect.udf().register("strlen", (s: String) => s.length())`
+  - **UDAF** - Aggregate functions are bit more complicated. The `UserDefinedAggregateFunction` has to be extended. UDAF can be more performant compare to `mapGroups` on Dataset.
+  
+### Query Optimizer
+  - Catalyst is the Spark SQL query optimizer.
+  - It takes query plan (logical plan) and transform it into an execution plan that Spark can run.
+  - Spark is able to apply optimalization on the logical plan and choose between multiple physical plan using a cost-based model.
+  

@@ -68,7 +68,7 @@ master/worker architecture
 - **DAG**
   - builds a graph of stages for each job
   
-### Query Optimizer
+### Optimizer
   - Catalyst is the Spark SQL query optimizer.
   - It takes query plan (logical plan) and transform it into an execution plan that Spark can run.
   - Spark is able to apply optimalization on the logical plan and choose between multiple physical plan using a cost-based model.

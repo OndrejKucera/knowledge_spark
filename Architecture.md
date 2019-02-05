@@ -49,7 +49,7 @@ master/worker architecture
 #### Run the start
 - Spark application begins when a `SparkContext` is started. Then the driver and executors (on its own JVM) are started on the workers node. One node can have more executors.
 
-#### Scheduler
+#### Scheduling
 - Spark schedules jobs on a fifo basis, by default.
 - With each action the Scheduler builds execution graph and launch the spark job.
 - **Spark Job**

@@ -67,3 +67,8 @@ master/worker architecture
   - Number of task per stage corresponds to the number of partition in output RDD of the stage
 - **DAG**
   - builds a graph of stages for each job
+  
+### Query Optimizer
+  - Catalyst is the Spark SQL query optimizer.
+  - It takes query plan (logical plan) and transform it into an execution plan that Spark can run.
+  - Spark is able to apply optimalization on the logical plan and choose between multiple physical plan using a cost-based model.

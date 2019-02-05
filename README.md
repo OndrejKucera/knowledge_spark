@@ -5,9 +5,11 @@ Note: The notes are not exhausted knowledge about Apache Spark.
 
 1) [Introduction](https://github.com/OndrejKucera/knowledge_spark/blob/master/Introduction.md)
 2) [Architecture](https://github.com/OndrejKucera/knowledge_spark/blob/master/Architecture.md)
-    - Spark Execution
-    - Scheduling
+    - [Partitioning](https://github.com/OndrejKucera/knowledge_spark/blob/master/Architecture.md#partitioning)
+    - [Spark Execution](https://github.com/OndrejKucera/knowledge_spark/blob/master/Architecture.md#spark-execution)
+    - [Scheduling](https://github.com/OndrejKucera/knowledge_spark/blob/master/Architecture.md#scheduling)
     - Shuffling
+    - [Optimizer](https://github.com/OndrejKucera/knowledge_spark/blob/master/Architecture.md#optimizer)
 3) [RDD](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md)
     - [Action](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#action)
     - [Transformation](https://github.com/OndrejKucera/knowledge_spark/blob/master/RDD.md#transformation)
@@ -18,6 +20,7 @@ Note: The notes are not exhausted knowledge about Apache Spark.
     - [DataFrames](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#dataframes)
     - [Dataset](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#dataset)
     - [Deferences between APIs](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#deferences-between-apis)
+    - [UDFs](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#user-defined-functions-udf-or-udaf)
 6) Spark Streaming
 
 ... still in progress!

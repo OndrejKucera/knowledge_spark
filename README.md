@@ -21,6 +21,9 @@ Note: The notes are not exhausted knowledge about Apache Spark.
     - [Dataset](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#dataset)
     - [Deferences between APIs](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#deferences-between-apis)
     - [UDFs](https://github.com/OndrejKucera/knowledge_spark/blob/master/SparkSQL.md#user-defined-functions-udf-or-udaf)
+6) Join
+7) Key/Value data
+8) Testing
 6) Spark Streaming
 
 ... still in progress!

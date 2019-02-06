@@ -90,14 +90,17 @@ Note: There is no performance difference between writing SQL queries or writing 
  - **Dataset**
    - semi-structed/structed data
    - typesafety
+   - restricted subset of datatypes
    - functional API
    - good performace (but not the best -> you can miss some optimalization i.e. when you use functional style)
  - **DataFrame**
    - semi-structed/structed data
+   - no typesafety
+   - restricted subset of datatypes (optimizer, perform operations directly on serialized data)
    - the best possible performace 
  - **RDD**
    - you have unstructured data
-   - you want fine-tuned and manage low-level data
+   - you want fine-tuned (i.e. number of partitions) and manage low-level data
    - you have complex data that can not be serialized with Encoder
    
 ### User-Defined Functions (UDF or UDAF)
